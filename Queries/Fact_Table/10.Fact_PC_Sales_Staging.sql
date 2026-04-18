@@ -1,8 +1,8 @@
--- Drop the initial customer dimension without a unique ID
+-- Drop the initial fact table without a unique ID
 
 DROP TABLE [PC_Sales_Stg].[dbo].[PC_Sales_Fact]
 
--- Create a new table and insert a unique ID, Customer_ID
+-- Create a new table and insert FK
 
 CREATE TABLE [PC_Sales_Stg].[dbo].[PC_Sales_Fact](
 	[PC_Sales_ID] INT IDENTITY (1,1) PRIMARY KEY,
@@ -54,7 +54,7 @@ CREATE TABLE [PC_Sales_Stg].[dbo].[PC_Sales_Fact](
 			References [PC_Sales_Stg].[dbo].[dim_Salesperson] (Salesperson_ID),
 );
 
--- Insert data into the customer dimension from the staging dataset, use distinct to remove duplicates
+-- Insert data into the fact table from the staging dataset, use distinct to remove duplicates
 
 INSERT INTO [PC_Sales_Stg].[dbo].[PC_Sales_Fact](Cost_Price,Sale_Price,Discount_Amount,Finance_Amount,Credit_Score,Cost_of_Repairs,Total_Sales_per_Employee,PC_Market_Price)
 SELECT Cost_Price,Sale_Price,Discount_Amount,Finance_Amount,Credit_Score,Cost_of_Repairs,Total_Sales_per_Employee,PC_Market_Price

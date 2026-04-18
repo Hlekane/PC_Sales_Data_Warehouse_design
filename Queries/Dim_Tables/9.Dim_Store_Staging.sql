@@ -1,8 +1,8 @@
--- Drop the initial customer dimension without a unique ID
+-- Drop the initial store dimension without a unique ID
 
 DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Store]
 
--- Create a new table and insert a unique ID, Customer_ID
+-- Create a new table and insert a unique ID
 
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Store](
 	[Store_ID] INT IDENTITY (1,1) PRIMARY KEY,
@@ -10,7 +10,7 @@ CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Store](
 	[Shop_Age] [nvarchar](255) NOT NULL
 )
 
--- Insert data into the customer dimension from the staging dataset, use distinct to remove duplicates
+-- Insert data into the store dimension from the staging dataset, use distinct to remove duplicates
 
 INSERT INTO [PC_Sales_Stg].[dbo].[Dim_Store](Shop_Name,Shop_Age)
 SELECT DISTINCT Shop_Name,Shop_Age

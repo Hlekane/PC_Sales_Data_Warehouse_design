@@ -1,9 +1,8 @@
-
--- Drop table if it exist
+-- Drop the initial product dimension without a unique ID
 
 DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Customer];
 
--- Create table if it does not exist
+-- Create a new table and insert a unique ID
 
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Customer](
 	[Customer_ID] INT IDENTITY (1,1) PRIMARY KEY,
