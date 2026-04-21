@@ -1,3 +1,7 @@
+-- Create store procedure to create the dim customer table
+CREATE PROCEDURE Sp_Create_Dim_Customer
+AS
+BEGIN
 
 -- drop dim customer if it exists
 DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Customer];
@@ -22,5 +26,8 @@ FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
 -- Select the able to see if the insertwascorrect
 SELECT * FROM [PC_Sales_Stg].[dbo].[Dim_Customer]
 
+END;
+
+EXEC sp_create_dim_customer
 
 
