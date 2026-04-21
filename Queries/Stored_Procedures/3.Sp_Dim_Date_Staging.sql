@@ -11,7 +11,8 @@ DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Date]
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Date](
 	[Date_ID] INT IDENTITY (1,1) PRIMARY KEY,
 	[Purchase_Date] [datetime2](7) NOT NULL,
-	[Ship_Date] [nvarchar](50) NOT NULL
+	[Ship_Date] [nvarchar](50) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 ) 
 -- Insert data into the date dimension from the staging dataset, use distinct to remove duplicates
 

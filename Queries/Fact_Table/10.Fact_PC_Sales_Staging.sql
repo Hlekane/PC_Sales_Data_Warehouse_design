@@ -22,7 +22,8 @@ CREATE TABLE [PC_Sales_Stg].[dbo].[PC_Sales_Fact](
 	[Credit_Score] [int] NOT NULL,
 	[Cost_of_Repairs] [nvarchar](50) NOT NULL,
 	[Total_Sales_per_Employee] [int] NOT NULL,
-	[PC_Market_Price] [int] NOT NULL
+	[PC_Market_Price] [int] NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 
 	-- inserting foreign keys
 	Constraint fk_Customer_ID

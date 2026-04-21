@@ -6,7 +6,8 @@ DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Priority]
 
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Priority](
 	[Priority_ID] INT IDENTITY (1,1) PRIMARY KEY,
-	[Priority] [nvarchar](255) NOT NULL
+	[Priority] [nvarchar](255) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 ) 
 
 -- Insert data into the priority dimension from the staging dataset, use distinct to remove duplicates

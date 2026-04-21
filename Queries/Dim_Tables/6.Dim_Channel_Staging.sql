@@ -7,7 +7,8 @@ DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Channel]
 
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Channel](
 	[Channel_ID] INT IDENTITY (1,1) PRIMARY KEY,
-	[Channel] [nvarchar](255) NOT NULL
+	[Channel] [nvarchar](255) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 ) 
 
 -- Insert data into the channel dimension from the staging dataset, use distinct to remove duplicates

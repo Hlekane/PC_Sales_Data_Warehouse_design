@@ -10,7 +10,8 @@ CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Product](
 	[PC_Model] [nvarchar](255) NOT NULL,
 	[Storage_Type] [nvarchar](255) NOT NULL,
 	[Storage_Capacity] [nvarchar](255) NOT NULL,
-	[RAM] [nvarchar](255) NOT NULL
+	[RAM] [nvarchar](255) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 )
 
 -- Insert data into the product dimension from the staging dataset, use distinct to remove duplicates

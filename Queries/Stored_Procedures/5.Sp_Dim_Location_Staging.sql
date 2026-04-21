@@ -12,7 +12,8 @@ CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Location](
 	[Location_ID] INT IDENTITY (1,1) PRIMARY KEY,
 	[Continent] [nvarchar](255) NOT NULL,
 	[Country_or_State] [nvarchar](255) NOT NULL,
-	[Province_or_City] [nvarchar](255) NOT NULL
+	[Province_or_City] [nvarchar](255) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 )
 
 -- Insert data into the location dimension from the staging dataset, use distinct to remove duplicates

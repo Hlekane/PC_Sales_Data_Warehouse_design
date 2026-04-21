@@ -7,7 +7,8 @@ DROP TABLE [PC_Sales_Stg].[dbo].[Dim_Salesperson]
 CREATE TABLE [PC_Sales_Stg].[dbo].[Dim_Salesperson](
 	[Salesperson_ID] INT IDENTITY (1,1) PRIMARY KEY,
 	[Sales_Person_Name] [nvarchar](255) NOT NULL,
-	[Sales_Person_Department] [nvarchar](255) NOT NULL
+	[Sales_Person_Department] [nvarchar](255) NOT NULL,
+	[LoadDate] DATETIME DEFAULT GETDATE()
 )
 
 -- Insert data into the salesperson dimension from the staging dataset, use distinct to remove duplicates
