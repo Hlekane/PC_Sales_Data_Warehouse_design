@@ -1,7 +1,7 @@
-USE PC_Sales_Stg
+USE pc_sales_stg
 GO
 -- Create SP for dim Salesperson
-CREATE PROCEDURE Sp_Create_Dim_Salesperson
+CREATE PROCEDURE sp_create_dim_salesperson
 AS
 BEGIN
 -- Drop the initial salesperson dimension without a unique ID

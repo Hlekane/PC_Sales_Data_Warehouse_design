@@ -13,8 +13,8 @@ CREATE TABLE [pc_sales_stg].[dbo].[dim_priority](
 -- Insert data into the priority dimension from the staging dataset, use distinct to remove duplicates
 
 INSERT INTO [pc_sales_stg].[dbo].[dim_priority](Priority)
-SELECT DISTINCT priority
-FROM [pc_sales_stg].[dbo].[dim_payment_method]
+SELECT DISTINCT Priority
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg]
 
 -- Check whether the table was succesfully created
 
