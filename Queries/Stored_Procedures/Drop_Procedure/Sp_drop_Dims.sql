@@ -3,6 +3,7 @@
 USE PC_Sales_Stg
 GO
 
+
 CREATE PROCEDURE Sp_Drop_Dim_Procedures
 AS 
 BEGIN
@@ -26,3 +27,4 @@ DROP PROCEDURE Sp_Create_Dim_Store;
 
 END;
 
+EXEC Sp_Drop_Dim_Procedures

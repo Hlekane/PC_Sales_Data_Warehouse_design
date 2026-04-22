@@ -1,3 +1,5 @@
+USE PC_Sales_Stg
+GO
 
 CREATE PROCEDURE Sp_Create_PC_Sales_Fact
 AS
@@ -70,4 +72,3 @@ SELECT * FROM [PC_Sales_Stg].[dbo].[PC_Sales_Fact];
 
 END;
 
-EXEC Sp_Create_PC_Sales_Fact

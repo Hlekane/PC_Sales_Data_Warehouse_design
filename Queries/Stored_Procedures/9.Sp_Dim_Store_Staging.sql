@@ -1,3 +1,6 @@
+USE PC_Sales_Stg
+GO
+
 CREATE PROCEDURE Sp_Create_Dim_Store
 AS
 BEGIN
@@ -27,4 +30,3 @@ SELECT * FROM [PC_Sales_Stg].[dbo].[Dim_Store]
 
 END;
 
-EXEC Sp_Create_Dim_Store
