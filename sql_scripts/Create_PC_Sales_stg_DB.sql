@@ -2,15 +2,15 @@ USE master;
 GO
 
 -- Create Staging Database
-IF DB_ID('PC_Sales_Stg') IS NULL
+IF DB_ID('pc_sales_stg') IS NULL
 BEGIN
-    CREATE DATABASE PC_Sales_Stg;
+    CREATE DATABASE pc_sales_stg;
 END
 GO
 
 -- Create Data Warehouse Database
-IF DB_ID('PC_Sales_Dwh') IS NULL
+IF DB_ID('pc_sales_dwh') IS NULL
 BEGIN
-    CREATE DATABASE PC_Sales_Dwh;
+    CREATE DATABASE pc_sales_dwh;
 END
 GO

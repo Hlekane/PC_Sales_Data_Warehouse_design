@@ -4,13 +4,13 @@ SELECT [Continent]
       ,[Country_or_State]
       ,[Province_or_City]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
 SELECT 
       [Shop_Name]
       ,[Shop_Age]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT
       [PC_Make]
@@ -19,7 +19,7 @@ FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
       ,[Storage_Capacity]
       ,[RAM]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT
        [Customer_Name]
@@ -27,34 +27,34 @@ FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
       ,[Customer_Contact_Number]
       ,[Customer_Email_Address]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT
        [Sales_Person_Name]
       ,[Sales_Person_Department]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT  
     [Channel]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
    SELECT  
        [Purchase_Date]
       ,[Ship_Date]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
   SELECT  
        [Priority]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT 
     [Payment_Method]
 
- FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg]
+ FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
  SELECT 
        [Cost_Price]
@@ -66,4 +66,4 @@ FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
       ,[Total_Sales_per_Employee]
       ,[PC_Market_Price]
 
-FROM [PC_Sales_Stg].[dbo].[PC_sales_dataset_Stg];
+FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
