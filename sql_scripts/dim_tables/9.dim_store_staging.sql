@@ -17,6 +17,6 @@ INSERT INTO [pc_Sales_Stg].[dbo].[dim_store](Shop_Name,Shop_Age)
 SELECT DISTINCT Shop_Name,Shop_Age
 FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg]
 
--- Check whether the table was succesfully created
+-- Check whether the table was successfully created
 
 SELECT * FROM [pc_sales_Stg].[dbo].[dim_store]

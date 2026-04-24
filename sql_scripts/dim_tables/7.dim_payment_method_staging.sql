@@ -16,6 +16,6 @@ INSERT INTO [pc_sales_stg].[dbo].[dim_payment_method](Payment_Method)
 SELECT DISTINCT Payment_Method
 FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg]
 
--- Check whether the table was succesfully created
+-- Check whether the table was successfully created
 
 SELECT * FROM [pc_sales_stg].[dbo].[dim_payment_method]

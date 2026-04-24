@@ -61,5 +61,5 @@ INSERT INTO [pc_sales_stg].[dbo].[pc_sales_fact](Cost_Price,Sale_Price,Discount_
 SELECT Cost_Price,Sale_Price,Discount_Amount,Finance_Amount,Credit_Score,Cost_of_Repairs,Total_Sales_per_Employee,PC_Market_Price
 FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
 
--- Check whether the table was succesfully created
+-- Check whether the table was successfully created
 SELECT * FROM [pc_sales_stg].[dbo].[pc_sales_fact];
