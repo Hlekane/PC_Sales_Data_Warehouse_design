@@ -31,3 +31,4 @@ select distinct Customer_Name,
 /* Select the table to see if the insert was correct*/
 select *
   from Pc_Sales_Stg.dbo.Dim_Customer;
+
