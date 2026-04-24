@@ -23,4 +23,3 @@ select distinct Continent,
   from Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg /*Check whether the table was successfully created*/
 select *
   from Pc_Sales_Stg.dbo.Dim_Location
-

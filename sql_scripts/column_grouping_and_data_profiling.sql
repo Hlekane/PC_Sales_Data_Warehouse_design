@@ -1,69 +1,69 @@
--- column grouping and data profiling
+/* column grouping and data profiling*/
+select
+      Continent,
+      Country_Or_State,
+      Province_Or_City
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-SELECT [Continent]
-      ,[Country_or_State]
-      ,[Province_or_City]
+select
+      Shop_Name,
+      Shop_Age
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+select
+      Pc_Make,
+      Pc_Model,
+      Storage_Type,
+      Storage_Capacity,
+      Ram
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-SELECT 
-      [Shop_Name]
-      ,[Shop_Age]
+select
+      Customer_Name,
+      Customer_Surname,
+      Customer_Contact_Number,
+      Customer_Email_Address
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+select
+      Sales_Person_Name,
+      Sales_Person_Department
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
- SELECT
-      [PC_Make]
-      ,[PC_Model]
-      ,[Storage_Type]
-      ,[Storage_Capacity]
-      ,[RAM]
+select
+      Channel
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+select
+      Purchase_Date,
+      Ship_Date
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
- SELECT
-       [Customer_Name]
-      ,[Customer_Surname]
-      ,[Customer_Contact_Number]
-      ,[Customer_Email_Address]
+select
+      Priority
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+select
+      Payment_Method
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
- SELECT
-       [Sales_Person_Name]
-      ,[Sales_Person_Department]
-
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
- SELECT  
-    [Channel]
-
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
-   SELECT  
-       [Purchase_Date]
-      ,[Ship_Date]
-
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
-  SELECT  
-       [Priority]
-
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
- SELECT 
-    [Payment_Method]
-
- FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
- SELECT 
-       [Cost_Price]
-      ,[Sale_Price]
-      ,[Discount_Amount]
-      ,[Finance_Amount]
-      ,[Credit_Score]
-      ,[Cost_of_Repairs]
-      ,[Total_Sales_per_Employee]
-      ,[PC_Market_Price]
-
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+select
+      Cost_Price,
+      Sale_Price,
+      Discount_Amount,
+      Finance_Amount,
+      Credit_Score,
+      Cost_Of_Repairs,
+      Total_Sales_Per_Employee,
+      Pc_Market_Price
+from
+      Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;

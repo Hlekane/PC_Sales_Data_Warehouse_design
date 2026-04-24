@@ -19,7 +19,7 @@ use distinct to remove duplicates*/
 insert into Pc_Sales_Stg.Dbo.Dim_Store
   (
        Shop_Name,
-       Shop_Age
+       Shop_Age 
   )
 select distinct Shop_Name,
        Shop_Age

@@ -1,34 +1,28 @@
-USE pc_sales_stg
-GO
-
-CREATE PROCEDURE sp_create_dim_location
-AS
-BEGIN
-
--- Drop the initial location dimension without a unique ID
-
-DROP TABLE [pc_sales_stg].[dbo].[dim_location]
-
--- Create a new table and insert a unique ID
-CREATE TABLE [pc_sales_stg].[dbo].[dim_location](
-	[Location_ID] INT IDENTITY (1,1) PRIMARY KEY,
-	[Continent] [nvarchar](255) NOT NULL,
-	[Country_or_State] [nvarchar](255) NOT NULL,
-	[Province_or_City] [nvarchar](255) NOT NULL,
-	[LoadDate] DATETIME DEFAULT GETDATE()
+USE pc_sales_stg GO create Procedure Sp_Create_Dim_Location as begin
+/*Drop the initial location dimension without a unique ID*/
+drop table Pc_Sales_Stg.Dbo.Dim_Location
+/*Create a new table and insert a unique ID*/
+create table Pc_Sales_Stg.Dbo.Dim_Location(
+	Location_Id int Identity(1, 1) Primary Key,
+	Continent Nvarchar(255) not null,
+	Country_Or_State Nvarchar(255) not null,
+	Province_Or_City Nvarchar(255) not null,
+	LoadDate Datetime default Getdate()
 )
-
-
--- Insert data into the location dimension from the staging dataset, use distinct to remove duplicates
-
-INSERT INTO [pc_sales_stg].[dbo].[dim_location] (Continent,Country_or_State,Province_or_City)
-SELECT DISTINCT Continent,Country_or_State,Province_or_City
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg]
-
--- Check whether the table was succesfully created
-
-SELECT * FROM [pc_sales_stg].[dbo].[dim_location]
-
-
-END;
+/*Insert data into the location dimension from the staging dataset, 
+ use distinct to remove duplicates*/
+insert into
+	Pc_Sales_Stg.Dbo.Dim_Location(Continent, Country_Or_State, Province_Or_City)
+select
+	distinct Continent,
+	Country_Or_State,
+	Province_Or_City
+from
+	Pc_Sales_Stg.Dbo.Pc_Sales_Dataset_Stg
+	/*Check whether the table was successfully created*/
+select
+	*
+from
+	Pc_Sales_Stg.Dbo.Dim_Location
+end;
 

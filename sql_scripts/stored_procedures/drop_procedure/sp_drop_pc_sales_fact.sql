@@ -1,9 +1,4 @@
+/*DROP the stored procedures for the all the fact*/
+create Procedure Sp_Drop_Fact_Procedure as begin drop Procedure if exists Sp_Pc_Sales_Fact;
 
--- DROP the stored procedures for the all the fact
-
-CREATE PROCEDURE Sp_Drop_Fact_Procedure
-AS
-BEGIN
-DROP PROCEDURE IF EXISTS Sp_PC_Sales_Fact;
-
-END;
+end;

@@ -1,86 +1,82 @@
 USE pc_sales_stg;
+
 GO
--- Removing duplicated data
+/* Removing duplicated data*/
+/* Location Dim*/
+select
+  distinct Continent,
+  Country_Or_State,
+  Province_Or_City into Pc_Sales_Stg.Dbo.Dim_Location
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
--- Location Dim
-SELECT DISTINCT 
-       [Continent]
-      ,[Country_or_State]
-      ,[Province_or_City]
-    INTO [pc_sales_stg].[dbo].[dim_location]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/* Store Dim*/
+select
+  distinct Shop_Name,
+  Shop_Age into Pc_Sales_Stg.Dbo.Dim_Store
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-  -- Store Dim
+/* Product Dim*/
+select
+  distinct Pc_Make,
+  Pc_Model,
+  Storage_Type,
+  Storage_Capacity,
+  Ram into Pc_Sales_Stg.Dbo.Dim_Product
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-SELECT DISTINCT
-       [Shop_Name]
-      ,[Shop_Age]
-     INTO [pc_sales_stg].[dbo].[dim_store]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/*Customer Dim*/
+select
+  distinct Customer_Name,
+  Customer_Surname,
+  Customer_Contact_Number,
+  Customer_Email_Address into Pc_Sales_Stg.Dbo.Dim_Customer
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
--- Product Dim
+/*Date Dim*/
+select
+  distinct Purchase_Date,
+  Ship_Date into Pc_Sales_Stg.Dbo.Dim_Date
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-  SELECT DISTINCT
-      [PC_Make]
-      ,[PC_Model]
-      ,[Storage_Type]
-      ,[Storage_Capacity]
-      ,[RAM]
-     INTO [pc_sales_stg].[dbo].[dim_product]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/*Salespersons Dim*/
+select
+  distinct Sales_Person_Name,
+  Sales_Person_Department into Pc_Sales_Stg.Dbo.Dim_Salesperson
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
--- Customer Dim
-SELECT DISTINCT
-       [Customer_Name]
-      ,[Customer_Surname]
-      ,[Customer_Contact_Number]
-      ,[Customer_Email_Address]
-     INTO [pc_sales_Stg].[dbo].[dim_customer]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/* Payment Dim*/
+select
+  distinct Payment_Method into Pc_Sales_Stg.Dbo.Dim_Payment_Method
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
--- Date Dim
- SELECT DISTINCT
-       [Purchase_Date]
-      ,[Ship_Date]
-     INTO [pc_sales_stg].[dbo].[dim_date]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/*Channel Dim*/
+select
+  distinct Hannel into Pc_Sales_Stg.Dbo.Dim_Channel
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
-  -- Salespersons Dim
+/*Priority Dim */
+select
+  distinct Priority into Pc_Sales_Stg.Dbo.Dim_Priority
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
 
- SELECT DISTINCT
-       [Sales_Person_Name]
-      ,[Sales_Person_Department]
-     INTO [pc_sales_stg].[dbo].[dim_salesperson]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
--- Payment Dim
-  SELECT DISTINCT
-       [Payment_Method]
-    INTO  [pc_sales_stg].[dbo].[dim_payment_method]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
-  -- Channel Dim
-    SELECT DISTINCT
-      [hannel]
-   INTO  [pc_sales_stg].[dbo].[dim_channel]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
-  -- Priority Dim 
-    SELECT DISTINCT
-      [Priority]
-   INTO  [pc_sales_stg].[dbo].[dim_priority]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
-
-
-  -- PC_Sales Fact Table
- SELECT DISTINCT
-       [Cost_Price]
-      ,[Sale_Price]
-      ,[Discount_Amount]
-      ,[Finance_Amount]
-      ,[Credit_Score]
-      ,[Cost_of_Repairs]
-      ,[Total_Sales_per_Employee]
-      ,[PC_Market_Price]
-      INTO [pc_sales_stg].[dbo].[pc_sales_fact]
-  FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg];
+/* PC_Sales Fact Table*/
+select
+  distinct Cost_Price,
+  Sale_Price,
+  Discount_Amount,
+  Finance_Amount,
+  Credit_Score,
+  Cost_Of_Repairs,
+  Total_Sales_Per_Employee,
+  Pc_Market_Price into Pc_Sales_Stg.Dbo.Pc_Sales_Fact
+from
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;

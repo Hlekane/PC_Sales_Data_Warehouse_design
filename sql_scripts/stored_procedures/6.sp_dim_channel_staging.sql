@@ -1,30 +1,24 @@
-USE pc_sales_stg
-GO
+USE pc_sales_stg GO create Procedure Sp_Create_Dim_Channel as begin
+/*Drop the initial channel dimension without a unique ID*/
 
-CREATE PROCEDURE sp_create_dim_channel
-AS
-BEGIN
--- Drop the initial channel dimension without a unique ID
-
-DROP TABLE [pc_sales_stg].[dbo].[dim_channel]
-
--- Create a new table and insert a unique ID
-
-CREATE TABLE [pc_sales_stg].[dbo].[dim_channel](
-	[Channel_ID] INT IDENTITY (1,1) PRIMARY KEY,
-	[Channel] [nvarchar](255) NOT NULL,
-	[LoadDate] DATETIME DEFAULT GETDATE()
-) 
-
--- Insert data into the channel dimension from the staging dataset, use distinct to remove duplicates
-
-INSERT INTO [pc_sales_stg].[dbo].[dim_channel] (Channel)
-SELECT DISTINCT Channel
-FROM [pc_sales_stg].[dbo].[pc_sales_dataset_stg]
-
--- Check whether the table was succesfully created
-
-SELECT * FROM [pc_sales_stg].[dbo].[dim_channel]
-
-END;
-
+drop table Pc_Sales_Stg.Dbo.Dim_Channel
+/*Create a new table and insert a unique ID*/
+create table Pc_Sales_Stg.Dbo.Dim_Channel(
+	Channel_Id int Identity(1, 1) Primary Key,
+	Channel Nvarchar(255) not null,
+	LoadDate Datetime default Getdate()
+)
+/*Insert data into the channel dimension from the staging dataset, use 
+ distinct to remove duplicates*/
+insert into
+	Pc_Sales_Stg.Dbo.Dim_Channel(Channel)
+select
+	distinct Channel
+from
+	Pc_Sales_Stg.Dbo.Pc_Sales_Dataset_Stg
+	/*Check whether the table was successfully created*/
+select
+	*
+from
+	Pc_Sales_Stg.Dbo.Dim_Channel
+end;
