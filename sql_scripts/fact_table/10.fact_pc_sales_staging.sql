@@ -1,7 +1,10 @@
-/*Drop the initial fact table without a unique ID*/
+/*Drop the if it exists*/
+IF OBJECT_ID ('pc_sales_stg.dbo.pc_sales_fact', 'U') IS NOT NULL
 DROP TABLE
-  pc_sales_stg.dbo.pc_sales_fact
-  /*Create a new table and insert FK*/
+  pc_sales_stg.dbo.pc_sales_fact;
+
+
+/*Create a new table and insert FK*/
 create table
   Pc_Sales_Stg.dbo.pc_sales_fact (
     PC_Sales_ID INT IDENTITY (1, 1) PRIMARY KEY,

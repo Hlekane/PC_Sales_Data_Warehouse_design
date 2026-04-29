@@ -1,7 +1,10 @@
 /*Drop the initial salesperson dimension without a unique ID*/
+IF OBJECT_ID('pc_sales_stg.dbo.dim_salesperson', 'U') IS NOT NULL
 DROP TABLE
-  pc_sales_stg.dbo.dim_salesperson
-  /* Create a new table and insert a unique ID*/
+  pc_sales_stg.dbo.dim_salesperson;
+
+
+/* Create a new table and insert a unique ID*/
 create table
   Pc_Sales_Stg.dbo.dim_salesperson (
     Salesperson_ID INT IDENTITY (1, 1) PRIMARY KEY,
@@ -17,9 +20,11 @@ select
   distinct Sales_Person_Name,
   Sales_Person_Department
 from
-  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg
-  /*Check whether the table was successfully created*/
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
+
+
+/*Check whether the table was successfully created*/
 select
   *
 from
-  Pc_Sales_Stg.dbo.Dim_Salesperson
+  Pc_Sales_Stg.dbo.Dim_Salesperson;

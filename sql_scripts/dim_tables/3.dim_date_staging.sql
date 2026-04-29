@@ -1,4 +1,5 @@
 /*Drop the initial date dimension without a unique ID*/
+IF OBJECT_ID(' pc_sales_stg.dbo.dim_date', 'U') IS NOT NULL
 DROP TABLE
   pc_sales_stg.dbo.dim_date
   /*Create a new table and insert a unique ID*/
@@ -17,9 +18,11 @@ select
   distinct Purchase_Date,
   Ship_Date
 from
-  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg
-  /*Check whether the table was successfully created*/
+  Pc_Sales_Stg.dbo.Pc_Sales_Dataset_Stg;
+
+
+/*Check whether the table was successfully created*/
 select
   *
 from
-  Pc_Sales_Stg.dbo.Dim_Date
+  Pc_Sales_Stg.dbo.Dim_Date;

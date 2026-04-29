@@ -1,7 +1,10 @@
+IF OBJECT_ID('pc_sales_Stg.dbo.dim_product', 'U') IS NOT NULL
 /*Drop the initial product dimension without a unique ID*/
 DROP TABLE
-  pc_sales_Stg.dbo.dim_product
-  /*Create a new table and insert a unique ID*/
+  pc_sales_Stg.dbo.dim_product;
+
+
+/*Create a new table and insert a unique ID*/
 create table
   Pc_Sales_Stg.dbo.dim_product (
     Product_ID INT IDENTITY (1, 1) PRIMARY KEY,
